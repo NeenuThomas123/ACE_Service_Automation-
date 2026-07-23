@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const NavBar = require('../pages/navBar');
+const NavBar = require('../pages/navbar');
 console.log(NavBar);
 
 test.describe('Navigation Bar Tests', () => {
