@@ -1,53 +1,53 @@
-const { test, expect } = require('@playwright/test');
-const NavBar = require('../pageObjects/NavBar');
-// console.log(NavBar);
-
-test.describe('Navigation Bar Tests', () => {
-    let navBar;
-
-    test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:5173/');
-        navBar = new NavBar(page);
+import {test, expect} from '@playwright/test';
+import { Header } from '../pageObjects/NavBar';
+// console.log(Header);
+   let header;
+   test.beforeEach(async ({ page }) => {
+    await page.goto('http://localhost:5174/');
+      header = new Header(page);
     });
 
     test('should display the Home link', async () => {
-        expect(await navBar.isHomeLinkVisible()).toBe(true);
+        expect(await header.isHomeLinkVisible()).toBe(true);
     });
 
     test('should display the Services link', async () => {
-        expect(await navBar.isServicesLinkVisible()).toBe(true);
+        expect(await header.isServicesLinkVisible()).toBe(true);
     });
 
     test('should display the About Us link', async () => {
-        expect(await navBar.isAboutUsLinkVisible()).toBe(true);
+        expect(await header.isAboutUsLinkVisible()).toBe(true);
     });
 
     test('should display the Shop link', async () => {
-        expect(await navBar.isShopLinkVisible()).toBe(true);
+        expect(await header.isShopLinkVisible()).toBe(true);
     });
 
-    test('should navigate to Home page when Home link is clicked', async () => {
-        await navBar.clickHome();
-        expect(await navBar.isHomeLinkVisible()).toBe(true);
+    test('should scroll to home section home link is clicked ', async ({page}) => {
+        await header.clickHome();
+        const homeSection = page.locator('#home')
+        await expect(homeSection).toBeVisible()
     });
 
-    test('should navigate to Services page when Services link is clicked', async () => {
-        await navBar.clickServices();
-        expect(await navBar.isServicesLinkVisible()).toBe(true);
+    test('should scroll to service section what we do link is clicked ', async ({page}) => {
+        await header.clickServices();
+        const serviceSection = page.locator('#services')
+        await expect(serviceSection).toBeVisible();
     });
 
-    test('should navigate to About Us page when About Us link is clicked', async () => {
-        await navBar.clickAboutUs();
-        expect(await navBar.isAboutUsLinkVisible()).toBe(true);
+    test('should scroll to about  section when Who we are link is clicked', async ({page}) => {
+        await header.clickAboutUs();
+        const aboutSection = page.locator('#aboutus')
+        await expect(aboutSection).toBeVisible();
     });
+    test('should scroll to Shop section when Shop link is clicked', async ({page}) => {
+        await header.clickShop();
+        const shopSection = page.locator('#shop');
+        await expect(shopSection).toBeVisible();
 
-    test('should navigate to Shop page when Shop link is clicked', async () => {
-        await navBar.clickShop();
-        expect(await navBar.isShopLinkVisible()).toBe(true);
     });
 
     // test('should open mobile menu when bars icon is clicked', async () => {
-    //     await navBar.clickBarsIcon();
+    //     await header.clickBarsIcon();
     //     // Add assertion for mobile menu visibility if applicable
     // });
-});

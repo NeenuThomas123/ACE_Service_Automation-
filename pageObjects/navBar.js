@@ -1,11 +1,10 @@
- class NavBar {
+export class Header {
     constructor(page) {
         this.page = page;
         this.homeLink = 'a[href="#home"]';
         this.servicesLink = 'a[href="#services"]';
         this.aboutUsLink = 'a[href="#aboutus"]';
         this.shopLink = 'a[href="#shop"]';
-        // this.barsIcon = '.fa-bars';
     }
 
     async clickHome() {
@@ -24,10 +23,6 @@
         await this.page.click(this.shopLink);
     }
 
-    // async clickBarsIcon() {
-    //     await this.page.click(this.barsIcon);
-    // }
-
     async isHomeLinkVisible() {
         return await this.page.isVisible(this.homeLink);
     }
@@ -44,4 +39,3 @@
         return await this.page.isVisible(this.shopLink);
     }
 }
-module.exports = NavBar;
