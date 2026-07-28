@@ -47,7 +47,3 @@ import { Header } from '../pageObjects/NavBar';
 
     });
 
-    // test('should open mobile menu when bars icon is clicked', async () => {
-    //     await header.clickBarsIcon();
-    //     // Add assertion for mobile menu visibility if applicable
-    // });
