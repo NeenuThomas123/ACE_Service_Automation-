@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { HeroSection } from '../pageObjects/heroSection';
 
 let hero
-const baseUrl = 'http://localhost:5174/';
+const baseUrl = 'http://localhost:5173/';
 
 test.describe('Hero section', () => {
      
@@ -17,9 +17,14 @@ test.describe('Hero section', () => {
   });
 
   test('verify the heading and subheading in the hero section', async({page})=>{
-    await hero.verifyHeading();
-    await hero.verifySubHeading();
-    await hero.verifyHeadingText();
-    await hero.verifySubHeadingText();
+    await hero.verifyHeadingOne();
+    await hero.verifySubHeadingOne();
+    await hero.verifyHeadingTextOne();
+    await hero.verifySubHeadingTextOne();
+    await hero.verifyHeadingTwo();
+    await hero.verifySubHeadingTwo();
+    await hero.verifyHeadingTextTwo();
+    await hero.verifySubHeadingTextTwo();
+    
   })
 });
