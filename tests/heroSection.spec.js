@@ -21,10 +21,23 @@ test.describe('Hero section', () => {
     await hero.verifySubHeadingOne();
     await hero.verifyHeadingTextOne();
     await hero.verifySubHeadingTextOne();
+    
     await hero.verifyHeadingTwo();
     await hero.verifySubHeadingTwo();
     await hero.verifyHeadingTextTwo();
     await hero.verifySubHeadingTextTwo();
+    
+    await hero.verifyHeadingThree();
+    await hero.verifySubHeadingThree();
+    await hero.verifyHeadingTextThree();
+    await hero.verifySubHeadingTextThree();
+    
+    await hero.verifyHeadingFour();
+    await hero.verifySubHeadingFour();
+    await hero.verifyHeadingTextFour();
+    await hero.verifySubHeadingTextFour();
+    
+   
     
   })
 });
