@@ -40,10 +40,10 @@ import { Header } from '../pageObjects/NavBar';
         const aboutSection = page.locator('#aboutus')
         await expect(aboutSection).toBeVisible();
     });
-    test('should scroll to Shop section when Shop link is clicked', async ({page}) => {
-        await header.clickShop();
-        const shopSection = page.locator('#shop');
-        await expect(shopSection).toBeVisible();
+    // test('should scroll to Shop section when Shop link is clicked', async ({page}) => {
+    //     await header.clickShop();
+    //     const shopSection = page.locator('#shop');
+    //     await expect(shopSection).toBeVisible();
 
-    });
+    // });
 

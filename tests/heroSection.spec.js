@@ -37,7 +37,5 @@ test.describe('Hero section', () => {
     await hero.verifyHeadingTextFour();
     await hero.verifySubHeadingTextFour();
     
-   
-    
   })
 });
