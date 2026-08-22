@@ -40,10 +40,18 @@ import { Header } from '../pageObjects/NavBar';
         const aboutSection = page.locator('#aboutus')
         await expect(aboutSection).toBeVisible();
     });
-    // test('should scroll to Shop section when Shop link is clicked', async ({page}) => {
-    //     await header.clickShop();
-    //     const shopSection = page.locator('#shop');
-    //     await expect(shopSection).toBeVisible();
+   test('should display Coming Soon modal when Shop link is clicked', async ({ page }) => {
+    await header.clickShop();
 
-    // });
+    await expect(
+        page.getByRole('heading', { name: 'Coming Soon' })
+    ).toBeVisible();
 
+    await expect(
+        page.getByText("We're working on this feature and it will be available soon. Stay tuned!")
+    ).toBeVisible();
+
+    await expect(
+        page.getByRole('button', { name: 'Got it' })
+    ).toBeVisible();
+});
