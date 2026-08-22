@@ -3,7 +3,7 @@ import { Header } from '../pageObjects/NavBar';
 // console.log(Header);
    let header;
    test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
       header = new Header(page);
     });
 
